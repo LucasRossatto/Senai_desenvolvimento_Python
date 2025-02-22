@@ -1,0 +1,15 @@
+{
+    "clientes": [
+        {
+            "nome": "lucas",
+            "email": "lucas@gmail.com",
+            "idade": "19"
+        }
+    ],
+    "produtos": [
+        {
+            "nome": "teclado Dell",
+            "preco": "120"
+        }
+    ]
+}

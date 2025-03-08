@@ -8,7 +8,7 @@ def exibir_menu():
     print("3 - Atualizar Cliente")
     print("4 - Deletar Cliente")
     print("9 - Sair do Sistema")
-
+    
 def main():
     criar_tabela()
     controlCliente = ClienteController() 

@@ -1,6 +1,7 @@
 import mysql.connector
 from config import Config
 
+
 class ProdutoModel:
 
     def __init__(self):
@@ -27,18 +28,18 @@ class ProdutoModel:
 
     def get_produto_by_id(self, produto_id):
         query = "SELECT * WHERE id = %s"
-        self.cursor.exucute(query, produto_id)
+        self.cursor.execute(query, produto_id)
         return self.cursor.fedtchone()
 
     def delete_produto_by_id(self, produto_id):
         query = "DELETE FROM produtos WHERE id = %s"
-        self.cursor.exucute(query, produto_id)
+        self.cursor.execute(query, produto_id)
         self.connection.commit()
         return self.cursor.rowcount
 
     def update_produto_by_id(self, produto_id, nome, preco):
-        query = "UPDATE produtos SET nome = %s, preco = %s, WHERE if = %s"
-        self.cursor.exucute(query, nome, preco, produto_id)
+        query = "UPDATE produtos SET nome = %s, preco = %s WHERE id = %s"
+        self.cursor.execute(query, (nome, preco, produto_id))
         self.connection.commit()
         return self.cursor.rowcount
 

@@ -17,7 +17,6 @@ class ProdutoModel:
     def get_all_produtos(self):
         query = "SELECT * FROM produtos"
         self.cursor.execute(query)
-        print(self.cursor.fetchall())
         return self.cursor.fetchall()
 
     def insert_produtos(self, nome, preco):

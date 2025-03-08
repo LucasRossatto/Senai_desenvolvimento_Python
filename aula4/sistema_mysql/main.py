@@ -2,7 +2,7 @@ from src.controller import produto_controller
 
 
 def exibir_menu():
-    print("\nMercado Preso")
+    print("\nBem vindo ao Mercado Preso")
     print("\n==== Menu ====")
     print("1 - Cadastrar Produto")
     print("2 - Listar Produto")
@@ -14,14 +14,14 @@ def exibir_menu():
 
 def listar_produtos():
     print("\n--- Lista de Produtos ---")
+    
     produtos = produto_controller.listar_produtos()
+    
     if produtos:
         for produto in produtos:
-            print(
-                f"ID: {produto['id']}, Nome: {produto['nome']}, Preco {produto['preco']}"
-            )
+            print(f"Produto {produto['id']}, Nome: {produto['nome']}, Preço: R${produto['preco']:.2f}")
     else:
-        print("Não existe produtos cadastrados")
+        print("Não existem produtos cadastrados.")
 
 
 def cadastrar_produto():
@@ -31,7 +31,7 @@ def cadastrar_produto():
     novo_id = produto_controller.cadastrar_produtos(nome, preco)
     print(f"Produto cadastrado com sucesso com o novo ID {novo_id}.")
 
-
+  
 def atualizar_produto():
     print("\n --- Atulizar Produto ---")
     produto_id = int(input("Digite o ID do produto: "))
